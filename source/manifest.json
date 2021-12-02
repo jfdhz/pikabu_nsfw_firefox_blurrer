@@ -1,0 +1,31 @@
+{
+  "manifest_version": 2,
+  "name": "Pikabu NSFW blurrer",
+  "version": "0.0.1",
+
+  "description": "Блюрит изображения и видео у постов с тегом nsfw",
+  "icons": {
+    "48": "icons/icon_48.png",
+	"96": "icons/icon_96.png"
+  },
+
+  "applications": {
+    "gecko": {
+      "id": "{00000000-0000-0000-0000-000000000000}",
+      "strict_min_version": "45.0"
+    }
+  },
+
+  "browser_action": {
+    "default_icon": "icons/icon_32.png",
+    "default_title": "Pikabu NSFW blurrer",
+    "default_popup": "popup.html"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.pikabu.ru/*"],
+      "js": ["blurrer.js"]
+    }
+  ]
+}
